@@ -108,3 +108,119 @@ nhưng nó xấu và khó đọc hơn tree.
 Mẫu mình khuyên dùng nhất cho project ASP.NET / Flutter / web:
 
 tree -a -I "bin|obj|node_modules|.git|.vs|build|dist"
+
+
+
+
+# PowerTech - E-Commerce Solutions for Retail Tech
+
+PowerTech là hệ thống thương mại điện tử chuyên sâu cho lĩnh vực bán sỉ & lẻ linh kiện máy tính, PC build và thiết bị công nghệ. Dự án được tối ưu hóa cho hiệu năng cao, quản lý kho thông minh và quy trình hỗ trợ khách hàng chuyên nghiệp.
+
+---
+
+## 🌟 Phân hệ chính (Key Modules)
+
+Hệ thống được chia thành 6 phân hệ (Areas) với vai trò riêng biệt:
+
+1.  **Storefront**: Trang mua sắm công khai, bộ lọc sản phẩm thông minh, chi tiết cấu hình kỹ thuật.
+2.  **Customer Area**: Quản lý đơn hàng cá nhân, sổ địa chỉ, ví điện tử (giả lập) và lịch sử hỗ trợ.
+3.  **Sales Area (POS)**: Dành cho nhân viên bán hàng tại quầy và xử lý đơn hàng online nhanh chóng.
+4.  **Warehouse Area**: Quản lý tồn kho vật lý, phiếu nhập kho, kiểm kê và lịch sử biến động hàng hóa.
+5.  **Support Area**: Hệ thống Ticket (vé hỗ trợ), quản lý đánh giá khách hàng (Review) và FAQ.
+6.  **Shipper Area**: Hệ thống quản lý đơn hàng giao hàng.
+7.  **Admin Panel**: Quản trị master data (Category, Brand, Product), phân quyền Role và báo cáo doanh thu.
+
+---
+
+## 🚀 Hướng dẫn Cài đặt & Khởi chạy (Setup & Run)
+
+### 1. Yêu cầu hệ thống
+
+- **.NET 9.0 SDK** (Yêu cầu bắt buộc).
+- **Microsoft SQL Server** (2019 hoặc mới hơn).
+- **SQL Server Management Studio (SSMS)** để quản lý database.
+
+### 2. Thiết lập Database (Database Setup)
+
+Việc đầu tiên bạn cần làm là mở file `PowerTech/appsettings.json` và thay đổi chuỗi kết nối tại `DefaultConnection` sao cho phù hợp với SQL Server của bạn:
+
+```json
+"DefaultConnection": "Server=TÊN_SERVER_CỦA_BẠN;Database=TechZoneStoreDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
+```
+
+Sau đó, chọn **một trong hai** trường hợp dưới đây:
+
+---
+
+#### 📌 Trường hợp 1: Cài đặt kèm dữ liệu mẫu (Khuyên dùng)
+
+_Dành cho người muốn chạy thử dự án ngay với đầy đủ hàng trăm sản phẩm, đơn hàng và thương hiệu có sẵn._
+
+1.  Mở **SQL Server Management Studio (SSMS)**.
+2.  Tạo một Database mới tên là `TechZoneStoreDb`.
+3.  Kéo file **`TechZoneStoreDb.sql`** (nằm ở thư mục gốc của dự án) vào SSMS.
+4.  Nhấn nút **Execute (F5)** để chạy toàn bộ script. Hệ thống sẽ tự tạo bảng và đổ dữ liệu vào cho bạn.
+
+---
+
+#### 📌 Trường hợp 2: Cài đặt hệ thống trống (Khởi đầu mới)
+
+_Dành cho người muốn phát triển từ đầu, tự tay thêm sản phẩm và danh mục thông qua trang quản trị._
+
+1.  Tạo một Database trống trên SQL Server của bạn (ví dụ: `TechZoneStoreDb`).
+2.  Mở Terminal (Command Prompt) tại thư mục `PowerTech` và chạy lệnh sau để tự tạo cấu trúc bảng:
+    ```bash
+    dotnet ef database update
+    ```
+    _(Lưu ý: Nếu chưa cài đặt EF Tool, hãy chạy lệnh `dotnet tool install --global dotnet-ef` trước)_.
+
+---
+
+### 3. Khởi chạy ứng dụng
+
+Sau khi đã thiết lập database xong, bạn chỉ cần thực hiện các lệnh sau để chạy web:
+
+```bash
+cd PowerTech
+dotnet run
+```
+
+Truy cập trình duyệt theo địa chỉ: `https://localhost:5029` (hoặc cổng hiển thị trên terminal).
+
+---
+
+## 🔐 Tài khoản Đăng nhập (Test Credentials)
+
+Bạn có thể sử dụng các tài khoản sau để kiểm tra đầy đủ các tính năng của hệ thống:
+
+| Role                      | Email                     | Password    | Ghi chú                   |
+| :------------------------ | :------------------------ | :---------- | :------------------------ |
+| **Quản trị viên (Admin)** | `admin@powertech.com`     | `Admin@123` | Toàn quyền hệ thống       |
+| **Nhân viên Bán hàng**    | `sales@powertech.com`     | `Admin@123` | Truy cập Sales Area / POS |
+| **Nhân viên Kho**         | `warehouse@powertech.com` | `Admin@123` | Truy cập Warehouse Area   |
+| **Nhân viên CSKH**        | `support@powertech.com`   | `Admin@123` | Truy cập Support Area     |
+| **Nhân viên Giao hàng**   | `shipper@powertech.com`   | `Admin@123` | Truy cập Shipper Area     |
+| **Khách hàng mẫu**        | `customer@gmail.com`      | `Admin@123` | Đăng nhập/Mua hàng online |
+
+Tài khoản tạo bằng Code (Seeding)
+Email: admin@powertech.com
+Mật khẩu: Admin@123
+Quyền (Role): Admin (Quản trị viên toàn hệ thống)
+
+> [!NOTE]
+> Sau khi đăng nhập với tài khoản Admin, bạn có thể vào mục **Admin > Users** để tạo mới hoặc thay đổi quyền hạn cho các tài khoản khác.
+
+---
+
+## 🛠 Công nghệ sử dụng
+
+- **Backend**: ASP.NET Core MVC 9.0, Entity Framework Core.
+- **Identity**: ASP.NET Core Identity (Identity Framework).
+- **Frontend**: HTML5, Vanilla CSS (Thiết kế Custom), JavaScript ES6+.
+- **Real-time**: SignalR (Thông báo đơn hàng & Chat hỗ trợ).
+
+---
+
+## 📝 Liên hệ & Bản quyền
+
+Dự án được phát triển nhằm mục đích phục vụ học tập và nghiên cứu. Mọi đóng góp vui lòng liên hệ qua email quản trị.

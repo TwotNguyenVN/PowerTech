@@ -53,7 +53,7 @@ Trước khi làm việc, agent phải đọc:
 - [x] Quản trị Sản phẩm (CRUD, Image Upload) - DONE
 - [x] Quản trị Danh mục & Thương hiệu (Danh mục CRUD DONE)
 - [x] Quản trị Đơn hàng (Cập nhật trạng thái, In hóa đơn) - DONE
-- [x] Quản trị Người dùng & Phân quyền (Admin, Sales, Warehouse...) - DONE
+- [x] Quản trị Người dùng & Phân quyền (Full CRUD, Đổi mật khẩu Admin, Khóa tài khoản) - **DONE (Premium UI)**
 
 ### Giai đoạn 5 — Storefront & Customer MVP (Hoàn tất: 100%)
 - [x] Trang chủ (Hoàn tất logic & UI - Dữ liệu động)
@@ -76,7 +76,7 @@ Trước khi làm việc, agent phải đọc:
 - [x] Xử lý đơn hàng (Xác nhận, Cập nhật trạng thái) - **DONE**
 - [x] Quản trị kho cơ bản (Tồn kho, Cảnh báo sắp hết) - **DONE**
 - [x] Quản lý phiếu nhập kho & Lịch sử (StockTransaction Audit) - **DONE**
-- [x] Quản lý Ticket hỗ trợ & Duyệt Review - **DONE**
+- [x] Quản lý Ticket hỗ trợ & Duyệt Review - **DONE (Premium UI)**
 
 ## Technical Notes
 - Database hiện tại: TechZoneStoreDb (SQL Server).

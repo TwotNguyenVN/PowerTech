@@ -495,7 +495,42 @@
 
 ---
 
-# 11. File agent nên ưu tiên đọc
+# 12. Giai đoạn 10 — Nâng cấp tính năng & Hoàn thiện Mở rộng (Advanced Features)
+
+## Quy tắc của giai đoạn này
+- Hoàn thiện nghiệp vụ sâu cho từng Role, làm nổi bật đồ án.
+- Validate kỹ càng dữ liệu đầu vào.
+- Chắc chắn mọi Module đều có Audit Trail.
+
+## Module 10.1 — Sales Extension (Mã giảm giá & POS)
+- [x] Quản lý Mã giảm giá (Coupons): Tạo, Áp dụng, Hết hạn.
+- [x] Áp dụng Mã giảm giá vào Checkout.
+- [x] Bán hàng tại quầy (POS): Tối ưu quy trình chọn nhanh nhiều sản phẩm.
+- [x] Chức năng In Hóa đơn chuyên nghiệp (Print Invoice) ngay sau khi tạo đơn POS.
+
+## Module 10.2 — Customer Extension (Partial Checkout)
+- [x] Thay thế Select-All trong giỏ: Tích hợp Checkbox từng sản phẩm để mua.
+- [x] Real-time tính toán Tổng Tạm Tính (Subtotal) cho mặt hàng được chọn.
+- [x] Xử lý Checkout: Chỉ chuyển OrderItems cho các món được Tick.
+- [x] Giữ lại các món chưa thanh toán trong Giỏ hàng (Cart).
+
+## Module 10.3 — Shipper Area (Luồng vận chuyển)
+- [x] Khởi tạo Area Shipper, Role Shipper.
+- [x] Màn hình xem danh sách "Đơn chờ giao", "Đang giao".
+- [x] Tính năng Cập nhật trạng thái "Giao thành công", "Thất bại".
+
+## Module 10.4 — Database & Code Quality
+- [x] Xử lý triệt để Warning Null Reference cho Support module.
+- [x] Fix seed database logic đảm bảo 100% không lỗi Foreign Key.
+- [x] Chốt cấu trúc ảnh Path Local (wwwroot/uploads).
+
+## Module 10.5 — Hồ sơ Môn Học Trọng Tâm
+- [x] Viết Báo cáo đồ án Web 20 trang siêu chi tiết (Bao_cao_Do_an_Web_PowerTech.md).
+- [x] Checklist cấu trúc ERD, Use Case, RBAC cho Hội đồng.
+
+---
+
+# 13. File agent nên ưu tiên đọc
 
 ## Luôn đọc trước
 - [ ] `POWERTECH_MASTER_SPEC.md`
@@ -518,7 +553,7 @@
 
 ---
 
-# 12. Mẫu cập nhật tiến độ sau mỗi phiên
+# 14. Mẫu cập nhật tiến độ sau mỗi phiên
 
 ```md
 ## Session Update
