@@ -1,7 +1,8 @@
-﻿USE [master]
+USE [master]
 GO
 /****** Object:  Database [TechZoneStoreDb]    Script Date: 01/07/2026 12:47:24 SA ******/
 CREATE DATABASE [TechZoneStoreDb]
+
 GO
 ALTER DATABASE [TechZoneStoreDb] SET COMPATIBILITY_LEVEL = 160
 GO
@@ -6114,4 +6115,3 @@ USE [master]
 GO
 ALTER DATABASE [TechZoneStoreDb] SET  READ_WRITE 
 GO
-
