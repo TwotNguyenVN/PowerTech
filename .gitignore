@@ -99,3 +99,12 @@ query.sql
 gallery.json
 products_*.json
 create_missing_dirs.py
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Others
+*.log
