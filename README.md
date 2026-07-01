@@ -96,31 +96,32 @@ cd PowerTech/PowerTech
 dotnet restore
 ```
 
-### 4. Cấu hình Chuỗi Kết Nối (Connection String)
+### 4. Khôi phục Cơ sở dữ liệu (Restore Database)
 
-Bạn cần cấu hình lại kết nối đến SQL Server của máy bạn. Hãy mở (hoặc tạo) file `appsettings.Development.json` hoặc chỉnh trực tiếp trong `appsettings.json`:
+Dự án đã có sẵn toàn bộ dữ liệu mẫu và cấu trúc bảng. Bạn cần chạy script từ file `data.sql` để khởi tạo:
+1. Mở SQL Server Management Studio (SSMS) hoặc công cụ quản trị SQL tương tự.
+2. Kết nối tới SQL Server của bạn.
+3. Mở file `data.sql` (nằm ở thư mục gốc của dự án) và nhấn **Execute** để chạy toàn bộ lệnh.
 
+### 5. Cấu hình Chuỗi Kết Nối (Connection String)
+
+Sau khi Database đã tạo thành công, bạn cần cấu hình chuỗi kết nối trong source code:
+1. Tìm file `appsettings.example.json` trong thư mục `PowerTech`.
+2. Đổi tên (hoặc copy) file này thành `appsettings.json`.
+3. Mở file `appsettings.json` và điền đường dẫn thật của SQL Server vào chuỗi `DefaultConnection`.
+
+Ví dụ:
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=PowerTechDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
+    "DefaultConnection": "Server=TEN_MAY_CHU_CUA_BAN;Database=TEN_DATABASE;User Id=sa;Password=MAT_KHAU_CUA_BAN;Encrypt=True;TrustServerCertificate=True"
   }
 }
 ```
 
 > [!IMPORTANT]
-> - Sửa `Server=localhost` thành Tên Server SQL của bạn.
-> - Đảm bảo cờ `TrustServerCertificate=True` luôn được bật khi chạy ở môi trường phát triển (localhost).
-
-### 5. Khởi tạo Cơ sở Dữ liệu (Database Update)
-
-Mở terminal và chạy lệnh sau để tạo các bảng trong Database:
-
-```bash
-dotnet ef database update
-```
-> [!TIP]
-> Hệ thống được tích hợp sẵn cơ chế **Tự động Seed dữ liệu**. Lần đầu tiên dự án chạy, nếu các bảng cấu hình hoặc Admin chưa có, hệ thống sẽ tự động khởi tạo dữ liệu mẫu cho bạn.
+> - Thay thế các giá trị viết hoa bằng thông tin SQL Server thực tế của bạn.
+> - Đảm bảo giữ nguyên cờ `TrustServerCertificate=True` nếu chạy ở môi trường localhost để tránh lỗi SSL.
 
 ---
 
